@@ -1,0 +1,29 @@
+$ irb
+$ require "./drink.rb"
+
+スタート
+  machine = VendingMachine.new
+
+お金の投入
+  machine.insert
+
+払い戻し
+  machine.pay_back
+
+投入金額の表示
+  machine.total
+
+購入できるかの確認
+  machine.purchase?(Drink.coke)
+  machine.purchase?(Drink.redbull)
+  machine.purchase?(Drink.water)
+
+購入
+  machine.purchase(Drink.coke)
+
+売り上げ金額の表示
+  machine.sale_amount
+
+在庫補充
+  一つ:  machine.store(Drink.coke)
+  x個:   x.times { machine.store(Drink.coke) }
