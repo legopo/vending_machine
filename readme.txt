@@ -4,6 +4,9 @@ $ require "./drink.rb"
 スタート
   machine = VendingMachine.new
 
+飲み物の情報を取得
+  machine.info
+
 お金の投入
   machine.insert
 
