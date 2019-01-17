@@ -8,7 +8,7 @@ $ require "./vending_machine.rb"
   machine.info
 
 お金を作る
- money = Money.price_x
+ money = Money.value(x)
  (xに作りたい金額を入れる)
 
 お金の投入

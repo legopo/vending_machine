@@ -20,26 +20,15 @@ class Drink
 end
 
 class Money
+  JAPANESE_MONEY = [1, 10, 50, 100, 500, 1000, 5000, 10000]
   attr_reader :kind_of_money
 
-  def self.price_10
-    self.new 10
-  end
-
-  def self.price_50
-    self.new 50
-  end
-
-  def self.price_100
-    self.new 100
-  end
-
-  def self.price_500
-    self.new 500
-  end
-
-  def self.price_1000
-    self.new 1000
+  def self.value(kind_of_money)
+    if JAPANESE_MONEY.include?(kind_of_money)
+      self.new(kind_of_money)
+    else
+      puts "正しい金額を入れてください"
+    end
   end
 
   def initialize(kind_of_money)
@@ -79,7 +68,7 @@ class VendingMachine
 
   def info
     @drinks.each do |key, value|
-      puts "#{key}:#{value[:price]} 円 残り:#{value[:drinks].length} 個"
+      puts "#{key}: #{value[:price]} 円 残り: #{value[:drinks].length} 個"
     end
   end
 
@@ -97,9 +86,7 @@ class VendingMachine
   end
 
   def store(drink)
-    unless @drinks.has_key?(drink.name)
-      @drinks[drink.name] = { price: drink.price ,drinks: [] }
-    end
+    @drinks[drink.name] = { price: drink.price ,drinks: [] } unless @drinks.has_key?(drink.name)
     @drinks[drink.name][:drinks].push(drink)
   end
 end
