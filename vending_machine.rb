@@ -86,7 +86,7 @@ class VendingMachine
   end
 
   def store(drink)
-    @drinks[drink.name] = { price: drink.price ,drinks: [] } unless @drinks.has_key?(drink.name)
+    @drinks[drink.name] = { price: drink.price , drinks: [] } unless @drinks.has_key?(drink.name)
     @drinks[drink.name][:drinks].push(drink)
   end
 end
