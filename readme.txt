@@ -1,5 +1,5 @@
 $ irb
-$ require "./drink.rb"
+$ require "./vending_machine.rb"
 
 スタート
   machine = VendingMachine.new
@@ -7,8 +7,11 @@ $ require "./drink.rb"
 飲み物の情報を取得
   machine.info
 
+お金を作る
+ money = Money.new  
+
 お金の投入
-  machine.insert
+  machine.insert(money)
 
 払い戻し
   machine.pay_back
