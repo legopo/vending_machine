@@ -22,8 +22,29 @@ end
 class Money
   attr_reader :kind_of_money
 
-  def initialize
-    @kind_of_money = gets.chomp.to_i
+  def self.price_10
+    self.new 10
+  end
+
+  def self.price_50
+    self.new 50
+  end
+
+  def self.price_100
+    self.new 100
+  end
+
+  def self.price_500
+    self.new 500
+  end
+
+  def self.price_1000
+    self.new 1000
+  end
+
+  def initialize(kind_of_money)
+    @kind_of_money = kind_of_money
+    # @kind_of_money = gets.chomp.to_i
   end
 end
 
