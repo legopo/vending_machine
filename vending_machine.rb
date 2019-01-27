@@ -33,7 +33,6 @@ class Money
 
   def initialize(kind_of_money)
     @kind_of_money = kind_of_money
-    # @kind_of_money = gets.chomp.to_i
   end
 end
 
@@ -86,7 +85,7 @@ class VendingMachine
   end
 
   def store(drink)
-    @drinks[drink.name] = { price: drink.price , drinks: [] } unless @drinks.has_key?(drink.name)
+    @drinks[drink.name] = { price: drink.price , drinks: [] } unless @drinks.include?(drink.name)
     @drinks[drink.name][:drinks].push(drink)
   end
 end
