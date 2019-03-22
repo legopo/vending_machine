@@ -20,7 +20,7 @@ class Drink
 end
 
 class Money
-  JAPANESE_MONEY = [1, 10, 50, 100, 500, 1000, 5000, 10000]
+  JAPANESE_MONEY = [1, 5, 10, 50, 100, 500, 1000, 5000, 10000]
   attr_reader :kind_of_money
 
   def self.value(kind_of_money)
